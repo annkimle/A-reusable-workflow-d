@@ -1,16 +1,16 @@
 on:
   workflow_call:
     inputs:  
-      username:
-        description: 'A username passed from the caller workflow'
-        default: 'Annkimle'
-        required: false
+      username: 
+        description: 'who-to-greet'
+        default: 'World'
+        required: true
         type: string
 jobs:
-  print-username:
-    runs-on: windows
+  reuseable-job:
+    runs-on: ubuntu-latest
 
     steps:
       name: Print the input name to STDOUT
-      run: echo the username is ${{unputs.username}}
-
+      run: echos "Hello"  to the sonsole.
+   
