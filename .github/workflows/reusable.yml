@@ -1,0 +1,16 @@
+on:
+  workflow_call:
+    inputs:  
+      username:
+        description: 'A username passed from the caller workflow'
+        default: 'Annkimle'
+        required: false
+        type: string
+jobs:
+  print-username:
+    runs-on: windows
+
+    steps:
+      name: Print the input name to STDOUT
+      run: echo the username is ${{unputs.username}}
+
